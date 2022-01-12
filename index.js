@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const { MongoClient, ObjectId } = require("mongodb");
+const { MongoClient } = require("mongodb");
 const ObjectId = require("mongodb").ObjectID;
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World! volunteer");
 });
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.zvuaj.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
